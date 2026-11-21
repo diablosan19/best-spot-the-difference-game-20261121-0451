@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Night Market — Spot the Difference</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #120e26; }
+  body { display: flex; flex-direction: column; align-items: center; }
+  #wrap { width: min(1240px, 100vw); }
+  canvas#game { display: block; width: 100%; height: auto; touch-action: none; cursor: crosshair; }
+  #controls { display: flex; gap: 12px; justify-content: center; padding: 10px 0 16px; }
+  #controls button {
+    font: bold 16px Georgia, serif; color: #120e26; background: #ffd23f;
+    border: none; border-radius: 8px; padding: 10px 22px; cursor: pointer;
+  }
+  #controls button:hover { background: #ffe08a; }
+  #controls button:disabled { opacity: 0.45; cursor: default; }
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" aria-label="Lantern Night Market spot the difference game: two near-identical pictures of a night market side by side; find 7 differences"></canvas>
+  <div id="controls">
+    <button id="hintBtn" type="button">💡 Hint (H)</button>
+    <button id="restartBtn" type="button">↻ Restart (R)</button>
+  </div>
+</div>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
